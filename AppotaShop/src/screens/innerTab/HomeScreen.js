@@ -27,7 +27,7 @@ import update from "immutability-helper";
 import AppHeader from "../../components/appInterface/AppHeader";
 import CombinedList from "../../components/appInterface/listViews/CombinedList";
 
-import getProduct from "../../actions/GetProductAction";
+import { getAllProduct } from "../../actions/GetProductAction";
 import getMoreProduct from "../../actions/GetMoreProductAction";
 
 import { connect } from "react-redux";
@@ -136,7 +136,7 @@ mapStateToProps = state => ({
   newProduct: state.newProduct
 });
 mapDispatchToProps = dispatch => ({
-  getProduct: productSession => dispatch(getProduct(productSession)),
+  getProduct: productSession => dispatch(getAllProduct(productSession)),
   getMoreProduct: () => dispatch(getMoreProduct())
 });
 export default connect(
